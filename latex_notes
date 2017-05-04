@@ -1,0 +1,386 @@
+% Template created by Karol Kozioł (www.karol-koziol.net) for ShareLaTeX
+
+\documentclass[a4paper,9pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage{amsmath,amssymb,textcomp}
+\everymath{\displaystyle}
+
+\usepackage{times}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+\usepackage[defaultmono,scale=0.85]{droidmono}
+
+\usepackage{multicol}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{20.0pt}
+
+
+\usepackage{geometry}
+\geometry{
+a4paper,
+total={210mm,297mm},
+left=10mm,right=10mm,top=10mm,bottom=15mm}
+
+\linespread{1.3}
+
+
+% custom title
+\makeatletter
+\renewcommand*{\maketitle}{%
+\noindent
+\begin{minipage}{0.4\textwidth}
+\begin{tikzpicture}
+\node[rectangle,rounded corners=6pt,inner sep=10pt,fill=blue!50!black,text width= 0.95\textwidth] {\color{white}\Huge \@title};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\textwidth}
+\begin{tikzpicture}
+\node[rectangle,rounded corners=3pt,inner sep=10pt,draw=blue!50!black,text width= 0.95\textwidth] {\LARGE \@author};
+\end{tikzpicture}
+\end{minipage}
+\bigskip\bigskip
+}%
+\makeatother
+
+% custom section
+\usepackage[explicit]{titlesec}
+\newcommand*\sectionlabel{}
+\titleformat{\section}
+  {\gdef\sectionlabel{}
+   \normalfont\sffamily\Large\bfseries\scshape}
+  {\gdef\sectionlabel{\thesection\ }}{0pt}
+  {
+\noindent
+\begin{tikzpicture}
+\node[rectangle,rounded corners=3pt,inner sep=4pt,fill=blue!50!black,text width= 0.95\columnwidth] {\color{white}\sectionlabel#1};
+\end{tikzpicture}
+  }
+\titlespacing*{\section}{0pt}{15pt}{10pt}
+
+
+% custom footer
+\usepackage{fancyhdr}
+\makeatletter
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[C]{\footnotesize \textcopyright\ \@date\ \ \@author}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\makeatother
+
+
+\title{Math cheat sheet\ \ No.\ 123}
+\author{Share\LaTeX\ or Some University or Something or even Something Else}
+\date{2014}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols*}{2}
+
+
+\section{Many electron atom}
+\subsection{General Hamiltonian}
+$$\hat{H}(\vec{r_1},\vec{r_2},\vec{r_3},...\vec{r_N}) =\sum_{i=1}^N{\left[-\frac{\hbar^2}{2m_e}\nabla_i^2 - \frac{Z_{nucl}e^2}{4\pi \epsilon_0r_i} \right]} + \sum_{i=1}^N\sum_{j=i+1}^N{\frac{e^2}{4 \pi \epsilon_0 r_{ij}}}$$
+Which can be rewritten as:
+$$\hat{H}(\vec{r}) = \sum_{i}{h(\vec{r_i})}+ \sum_{i,j>1}^N{\frac{e^2}{4 \pi \epsilon_0 r_{ij}}}$$
+
+\subsection{independent particle model}
+For the independent particle model a solution can be approximated that first calculates the solution by ignoring the electron electron interaction and then adding this interaction at the end.
+$$\hat{H}(\vec{r}) = \sum_{i}{h(\vec{r_i})}$$
+This equation is separable an can be solved to find the wave function (product of individual wavefunctions)
+$$ \Psi(\vec(r_N) = \psi(\vec{r_1})\psi(\vec{r_2})\psi(\vec{r_3}) \tiimes... \times \psi(\vec{r_N}) $$
+and the total energy
+$$E = E_1 + E_2 + E_3+ ... + E_N $$
+which can be found by using the Rydberg formula
+Then we can correct for the electron electron repulsion by finding the probable separation of the electrons and
+
+This is a pretty curde result as the wf/energy of the particle depends on the instantaneous position of the particle.
+
+
+\subsection{Central potential}
+Insert general and one electron Hamiltonian
+
+Features:
+\begin{itemize}
+    \item No $\mathscr{l}$ degeneracy Only $m_l$ degeneracy
+    \item Works best on atoms or atomic ions with a single electron occupying an outer orbital i.e. Alkali metal atoms, Singly ionised alkali earth ions  and any atoms with one electron in a highly excited stater
+    \item "When the one loosely-bound electron approaches the nucleus attraction due to the positive charge dominates. As it gets further away the nucleus and core electrons  as a single charged object with a charge of Zeff = +1"
+\end{itemize}  
+
+Quantum defect
+$$\frac{E_{nl}}{hc} = - \frac{R_M}{(n- \Delta_{n,l})^2}$$
+
+$R_m = R_\infty  Z_{eff}^2\frac{\mu_M}{m_e}$
+
+The quantum defect is strongly dependent on n and weakly dependent on $l$. As $l$ and n increases, the quantum defect decreases
+Because an electron in a low-` orbital is more core-penetrating than one in a high-` orbital with the same value of n, the eective charge of the nucleus and core electrons appear greater. On the other hand, electrons in high-` orbitals appear bound to an ion core with a charge of Ze = +1 and their binding energies are similar to those of a one electron atom
+
+\subsection{Pauli Principle}
+Fermions must be anti-symmetry with respects to exchange
+
+\subsection{Spin, Symetry etc.}
+Exchange interaction- energy needed to flip the spin of the 
+
+\subsection{Hunds Rules}
+\begin{itemize}
+    \item Highest spin loewst in energy
+    \item Highest $\vec{L}$ lowest in energy
+\end{itemize}
+1. Spin
+
+2. 
+
+3 a. LESS THAN HALF FULL highest j lowest in energy
+b.
+
+
+\subsection{Fine structure/ Spin Orbit Coupling}
+A dipolar magnetic moment is associated is asosiated with the rotational motion of the electron in 2 ways: (1) orbital motion of the electron, and (2) the spin of the electron.
+
+The magnetic dipole moment due to the orbital motion is expressed as $$\mu_{lz} = -\frac{e}{2m_e}l_z = -\frac{e}{2m_e}m_l\hbar= -\mu_B m_l$$
+
+The magnetic dipole moment due to the spin is similarly expressed as $$\mu_sz =-g_e \mu_Bm_s$$
+$\vec{\mu_{s}} = -g_e \frac{e}{2m_e}\vec{s} and \mu_B = \frac{e \hbar}{2m_e} $
+
+\section{Atomic Spectra}
+Selection rules for electric dipole transitions
+• Einstein coefficients - excited state lifetimes
+• Metastable levels
+• Lasers
+• Laser cooling
+- requirements for laser operation
+- example systems
+Inverse of the A is the lifetime
+\section{Molecules}
+$$\hat{H}
+=\sum_{i=1}^N{\left[-\frac{\hbar^2}{2M_N}\nabla_i^2 \right]} +
+\sum_{i=1}^N{\left[-\frac{\hbar^2}{2m_e}\nabla_i^2 \right]} + V(\vec{R_N;\vec{r_i}})$$ 
+
+$$\hat{H} = \hat{H}(\vec{R_1},\vec{R_2},\vec{R_3},...\vec{R_N};\vec{r_1},\vec{r_2},\vec{r_3},...\vec{r_N})$$
+
+$$ V(\vec{R_N;\vec{r_i}}) = \frac{e^2}{4 \pi \epsilon_0} \left[
+\sum_{i>j}\frac{1}{|\vec{r_i} - \vec{r_j}|} +
+\sum_{i>j}\frac{Z_NZ_M}{|\vec{R_N} - \vec{R_m}|}+ 
+\sum_{i>j}\frac{Z_N}{|\vec{R_N} - \vec{r_i}|} \right]$$ 
+
+Born Oppenheimer Aproximation
+explanation
+
+\subsection{$H^+_2$ cation}
+
+
+There are 2 forms of the electronic wavefunction gerade/symmetric ($\psi_+$) and ungerade/unsymmetric ($\psi_-$)
+$$\psi_+ = C[\phi_{1s}(\vec{r_A}) + \phi_{1s}(\vec{r_B})]$$
+$$\psi_- = C[\phi_{1s}(\vec{r_A}) - \phi_{1s}(\vec{r_B})]$$
+Wher C is the normalisation constant equal to $C = \frac{1}{2 \sqrt{2[1\pm I(R)]}}$
+Overlap integral is I(R)
+Molecule is more stable for gerade system as the electron probability density is in between the 2 protons neutralising their Coulomb repulsion.
+
+Molecule is more unstable for ungerade system as there is a lower probability of finding the electron located between the two protons. So Coulomb repulsion is not compensated and the molecule is likely to dissociate.
+electron probability density is in between the 2 protons neutralising their Coulomb repulsion.
+
+For large internuclear separations there is no overlap between
+the wavefunctions associated with the electron being at proton A and
+that at proton B. 
+
+So
+ $R \rightarrow \infty \Rightarrow I(R) \rightarrow 0$ so $ C = \frac{1}{\sqrt{2}}$
+
+For small internuclear separations the wavefunctions associated
+with the electron being at proton A and that at proton B completely
+overlap. So 
+
+As $R \rightarrow 0 \Rightarrow I(R) \rightarrow \pm 1$ so $ C = \frac{1}{2}$
+
+\textbf{Electronic Energies}
+$$ E_\pm = \frac{A_\pm}{N_\pm}= E_{1s} +\frac{1}{R} + \frac{-J(R) \mp K(R)}{1 \pm I(R)} $$
+Where $A_\pm$ is the expectation value of $\hat{H_{elec}}$ and $N_\pm$ is the normalisation constant. J(R) is the coulomb integral and K(R) is the exchange integral.
+
+$$ J(R) = \frac{1}{R}[1 - (1+R)e^{-2R}$$
+$$ K(R) = (1+R)e^{-R} $$
+
+As $R \rightarrow \infty \Rightarrow I(R), J(R), K(R) \rightarrow 0$ so $ E_\pm = E_{1s}$
+
+For regular values of R the corrections due to the overlap, coulomb and exhange integral 
+\begin{itemize}
+    \item lowers the energy of the gerade state $E_+$
+    \item raises the energy of the ungerade state $E_-$
+\end{itemize}
+
+For $R \rightarrow 0 \Rightarrow E_{\pm} \rightarrow \infty$
+
+The function, $E_+(R)$, associated with the gerade state, exhibits a minimum.
+This potential energy minimum corresponds to an internuclear
+separation for which a stable molecule can exist.
+
+On the other hand, the function, E−(R) does not exhibit a minimum confirming that a stable molecule cannot form in the antisymmetric state. If excited to this state, the molecule will dissociate.
+
+\subsection{$\mathbf{H_2}$ molecule}
+Here as there are multiple electrons we must consider separate spin states in particular singlet and triplet spin states.
+$E_+(R) \Rightarrow \psi^S $
+$E_-(R) \Rightarrow \psi^T $
+
+$$ E_\pm = \frac{A_\pm}{N_\pm}= 2E_{1s} +\frac{1}{R} + \frac{J(R)}{1 \pm I(R)^2} \pm \frac{ K(R)}{1 \pm I(R)^2} $$
+In general for all values of R
+$I(R) < 0 $
+$J(R) > 0$
+$K(R) < 0$
+
+The state $\psi^S$ with energy $E_+$ is shifted to lower energy by the corrections associated with the overlap, Coulomb and exchange integrals. A stable molecule is formed in this state.
+
+
+The state $\psi^T$ with energy $ E_-$ is shifted to higher energy. In the triplet state, $\psi^T$, the two electrons keep away from each other because the spatial part of the electronic wavefunction is antisymmetric with respect to exchange. Consequently, there is a low possibility of the electrons being found between the 2 nuclei (more likely to be on opposite ends) a stable molecule cannot be formed in this state.
+
+\subsection{molcular orbitals}
+$$ \sigma_g$$
+$$ \sigma_u = $$
+
+Grounds $\psi^S$ is denoted $1\sigma_g^2$ and Excited state $\psi^T$ is denoted $1\sigma_g 1\sigma_u$
+
+Hetronucluer diatomic molecues
+[isert eq 5.1118]
+
+They differ from those of homonuclear diatomic molecules such as H2 in that there is no reflection symmetry in the plane perpendicular to the molecular bond and therefore no designation of ‘gerade’ and ‘ungerade’. the molecular bond are generally not degenerate at large internuclear separation. Therefore in addition, to mixing of levels with the same values of `, the molecular bond can also be composed of hybrid orbitals, e.g., mixtures of s- and p-orbitals.
+
+3N nuclear degrees of freedom from 3 typres of nuclear motion: translational, vibrational and rotational.
+
+\textbf{Rotation}
+$$E_{rot} = BJ(J+1) $$
+$$B = \frac{\hbar^2}{2 \mu_{AB} R_e^2} = \frac{\hbar^2}{2I_e}$$ 
+(B shown in joules) and J is the angular momentum quantum number.
+
+\textbf{Vibration}
+$$E_v = \hbar \omega_0 \left( v  + \frac{1}{2}\right)$$
+$$\omega_0 = \sqrt{\frac{k}{\mu_{AB}}}$$
+
+where $v$ = 0, 1, 2, . . . is the vibrational quantum number. For a harmonic
+oscillator with a fundamental vibrational frequency, $\omega_0$
+
+By combining the energyf from above with the electronic energy, the total energy, EAB, of a diatomic molecule (rigid rotor) can
+be expressed in the harmonic approximation as
+E_{AB} = V(R_e) + 
+
+1. v is small; i.e., near the bottom of the potential well where the harmonic
+approximation is reasonable
+
+2. J is small; i.e., when centrifugal distortion, which can occur when the
+molecule is rapidly rotating and can cause an increase in the bond
+length, does not play a significant role.
+
+insert corrections and etc.
+
+\subsection{Spectra of diatomic molecules}
+
+Pure transitional transitions
+- These are transitions which do not involve any change in the
+electronic state or the vibrational state of the molecule.
+- They are only strong for molecules with non-zero electric dipole
+moments with which an oscillating electromagnetic field can interact. so molucules with a large difference in the size of their nuclei
+The selection rule for pure rotational transitions within the electric
+dipole approximation is that
+$$\Delta J = \pm 1 $$
+for linear molecules, including (all) diatomics (For non linear molecules $\Delta J = 0, \pm 1 $). and 
+$$\Delta E_j = 2B(J+1)$$
+
+vibrational rotation transitions
+
+do not involve a change in the electronic
+state of the molecule, but do involve changes in the rotational
+and vibrational states.
+
+Selection rules for vibration-rotation transitions, within the
+electric dipole approximation, are that
+∆v = ±1 
+$$\Delta J = \pm 1 $$
+two groupings of lines relating to each allowed change in the rotational
+quantum number:  ∆J = −1 (P-Branch) and with ∆J = +1 (R-branch), respectively.
+$$\Delta E_{ro,vib} = -2BJ + \hbar \omega_0 \textrm{    P branch}$$
+$$\Delta E_{ro,vib} = -2B(J+1) + \hbar \omega_0 \textrm{    R branch}$$
+
+Electronic transitions
+Molsular axis define $L_z$ and quantum number $M_L$ is denoted $\Lambda$
+$${}^{2S+1}\Lambda^{+,-}_{g,u}$$
+where S is the total electron spin quantum number, g (gerade) and u
+(ungerade) represent the symmetry of the electronic wavefunctions
+in the case of homonuclear diatomic molecules, and + and − indicate
+the reflection symmetry of the electronic wavefunction in a plane
+containing the internuclear axis
+
+\begin{tabular}{ll111}
+$|\Lambda| =$& 0 & 1& 2& 3& \\[1ex]
+ & $\Sigma$ & $\Pi$ &$\Delta$ &$\Phi$ \\
+\end{tabular}
+
+\begin{tabular}{ll111}
+$|\Lambda| =$& 0 & 1& 2& 3& \\[1ex]
+ & $\sigma$ & $\pi$ &$\delta$ &$\phi$ \\
+\end{tabular}
+
+%\begin{equation}
+%\begin{split}
+%first part &= second part #1 \\
+           %&= second part #2
+%\end{split}
+%\end{equation}
+
+%- \frac{Z_{nucl}e^2}{4\pi \epsilon_0r_i} \right]} + \sum_{i=1}^N\sum_{j=i+1}^N{\frac{e^2}{4 \pi \epsilon_0 r_{ij}}}$$
+
+
+
+
+
+
+
+
+
+
+
+\section{Trigonometry}
+
+$\mathcal(l)$
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+\begin{tikzpicture}[scale=5]
+\draw[thick,color=green] (0,0) -- node[below] {$b$} (1,0);
+\draw[thick,color=red] (1,0) -- node[right] {$a$} (1,0.57735);
+\draw[thick,color=black] (1,0.57735) -- node[above] {$c$} (0,0);
+\filldraw[fill=blue!20!white,draw=blue] (0,0) -- (0.3,0) arc (0:30:0.3); 
+\node[color=blue] at (0.33,0.1) {$\alpha$};
+\draw (0.95,0) -- (0.95,0.05) -- (1,0.05);
+\end{tikzpicture}
+
+\medskip
+
+\begin{tabular}{ll}
+$\sin\alpha = \frac{a}{c}$ & $\cos\alpha = \frac{b}{c}$ \\[1ex]
+$\tan\alpha = \frac{a}{b}$ & $\cot\alpha = \frac{b}{a}$ \\
+\end{tabular}
+
+\section{Algebra (some very very very very very long title)}
+
+\begin{tabular}{lll}
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$\\
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$\\
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$\\
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$\\
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$\\
+$a^n a^m = a^{n+m}$ & $\frac{a^n}{a^m} = a^{n-m}$ & $(a^n)^m = a^{n \cdot m}$
+\end{tabular}
+
+
+
+
+\end{multicols*}
+
+\end{document}
